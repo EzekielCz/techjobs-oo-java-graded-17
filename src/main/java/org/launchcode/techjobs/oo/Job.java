@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.util.Objects.isNull;
+
 public class Job {
 
     private int id;
@@ -36,6 +38,51 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+
+
+    @Override
+    public String toString() {
+        String stringThing = "\nID";
+//         if(employer.getValue().isEmpty()&& location.getValue().isEmpty() && positionType.getValue().isEmpty() && coreCompetency.getValue().isEmpty()){
+//            return "There is no job";
+        stringThing +=  ": "+this.id + "\n";
+        if (name.isEmpty()) {
+            stringThing += "Name: Data not available\n";
+        }
+        else {
+            stringThing += "Name: " +this.name + "\n";
+        }
+
+        if (this.employer == null || employer.getValue().isEmpty()){
+            stringThing +=  "Employer: Data not available\n";
+        }
+        else {
+            stringThing += "Employer: " +this.employer + "\n";
+        }
+
+        if (location.getValue().isEmpty()){
+            stringThing += "Location: Data not available\n";
+        }
+        else {
+            stringThing += "Location: " +this.location + "\n";
+        }
+
+        if (positionType.getValue().isEmpty()){
+            stringThing += "Position Type: Data not available\n";
+        }
+        else {
+            stringThing += "Position Type: " +this.positionType + "\n";
+        }
+
+        if (coreCompetency.getValue().isEmpty()){
+            stringThing += "Core Competency: Data not available\n";
+        }
+        else {
+            stringThing += "Core Competency: " +this.coreCompetency + "\n";
+        }
+        return stringThing;
+    }
+
 
     @Override
     public boolean equals(Object o) {
